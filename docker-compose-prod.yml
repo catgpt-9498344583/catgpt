@@ -1,0 +1,26 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.prod
+    volumes:
+      - frontend-dist:/app/dist
+    command: ["sleep", "infinity"]
+
+  backend:
+    depends_on:
+      - frontend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.prod
+    volumes:
+      - ./backend:/app
+      - frontend-dist:/app/static
+    ports:
+      - "127.0.0.1:5000:5000"
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_RUN_HOST=0.0.0.0
+
+volumes:
+  frontend-dist:
