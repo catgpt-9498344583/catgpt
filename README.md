@@ -32,11 +32,13 @@ git submodule update --init --recursive
 
 ## 🔧 Development Setup
 * Supports Linux, Windows, and Mac
+
 ### Requirements
 * Docker - 29.0.4
 * Docker Compose - 2.40.3
 
 Start the app with development mode for both frontend and backend.
+
 Linux/macOS:
 ```bash
 ./run_dev.sh
@@ -44,6 +46,7 @@ Linux/macOS:
 or
 
 docker compose -f docker-compose-dev.yml up --build
+
 ```
 Windows PowerShell:
 
@@ -54,21 +57,27 @@ or
 
 docker compose -f docker-compose-dev.yml up --build
 ```
+
 Then open:
 
 Frontend: `http://localhost:5173`
 
 Backend API Test: `http://localhost:5000/api/hello`
-📦 Production Build & Run
 
-🐳 Docker Compose Overview
-File	Description
-docker-compose-dev.yml	Dev setup 
-docker-compose-prod.yml	Production setup
-🧼 Clean Up
+## 🐳 Docker Compose Overview
+| File	| Description |
+|-|-|
+|docker-compose-dev.yml|	Dev setup |
+| docker-compose-prod.yml|	Production setup |
+
+## 🧼 Clean Up
 
 To stop and remove the containers:
 
+```bash
 docker compose -f docker-compose-dev.yml down
-# or
+
+or
+
 docker compose -f docker-compose-prod.yml down
+```
