@@ -1,6 +1,8 @@
 # Cat GPT
 
-This project contains a **Python Flask** backend and a **React + Vite** frontend, organized as Git submodules.
+* This project contains a **Python Flask** backend and a **React + Vite** frontend, organized as Git submodules.
+
+* **Please do not overuse the provided .env file, as this will result in charges on AWS**
 
 ## 📦 Cloning the Project
 
